@@ -25,8 +25,8 @@ public:
 	// Push operation: Insert an element onto the top of the stack
 	int push(int value) {
 		Node* newNode = new Node(); // 1. Allocate memory for the new node
-		NewNode->data = value; // 2. Assign value
-		NewNode->next = data; // 3. Set the next pointer of the new node to the current top node
+		newNode->data = value; // 2. Assign value
+		newNode->next = top; // 3. Set the next pointer of the new node to the current top node
 		top = newNode; // 4. Update the top pointer to the new node
 		cout << "Puch value: " << value << endl;
 		return value;
@@ -49,7 +49,7 @@ public:
 		}
 		else {
 			Node* current = top;
-			while (current = NULL) {
+			while (current != NULL) {
 				cout << current->data << " " << endl;
 				current = current->next;
 			}
@@ -65,7 +65,7 @@ public:
 };
 
 int main() {
-	stack stack;
+	Stack stack;
 
 	int choice = 0;
 	int value;
@@ -96,6 +96,20 @@ int main() {
 			if (!stack.isEmpty()) {
 				stack.peek(); // Get the value of the top element
 			}
+			else {
+				cout << "Stack is empty.No top value." << endl;
+			}
+			break;
+
+		case 4:
+			cout << "Exiting program." << endl;
+			break;
+		default:
+			cout << "Invalid choice. Try again." << endl;
+			break;
 		}
+
+		cout << endl;
 	}
+	return 0;
 }
