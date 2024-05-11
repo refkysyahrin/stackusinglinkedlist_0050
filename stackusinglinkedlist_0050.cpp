@@ -9,7 +9,7 @@ public:
 
 	Node() {
 		next = NULL;
-	}
+   }
 };
 
 // Stack class
@@ -36,8 +36,24 @@ public:
 	void pop() {
 		if (isEmpty()) {
 			cout << "Stack is empty." << endl;
-	   }
+		}
 		cout << "Popped value: " << top->data << endl;
 		top = top->next; // Update the top pointer to thr new node
+
+	}
+
+	// Peek/Top operation: Retrive the value of the topmost element without removing it
+	void peek() {
+		if (top == NULL) {
+			cout << "List is empty." << endl;
+		}
+		else {
+			Node* current = top;
+			while (current = NULL) {
+				cout << current->data << " " << endl;
+				current = current->next;
+			}
+		}
+	}
 
 };
